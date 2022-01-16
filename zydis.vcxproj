@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{A1BD02FD-5943-4339-B7D6-CBF472D36019}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>src;include;dependencies\zycore\include;$(IncludePath)</IncludePath>
+    <IntDir>$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>src;include;dependencies\zycore\include;$(IncludePath)</IncludePath>
+    <IntDir>$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>src;include;dependencies\zycore\include;$(IncludePath)</IncludePath>
+    <IntDir>$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>src;include;dependencies\zycore\include;$(IncludePath)</IncludePath>
+    <IntDir>$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>ZYDIS_STATIC_BUILD;WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>ZYDIS_STATIC_BUILD;WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <PreprocessorDefinitions>ZYDIS_STATIC_BUILD;</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <PreprocessorDefinitions>ZYDIS_STATIC_BUILD;</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="include\zydis\Decoder.h" />
+    <ClInclude Include="include\zydis\DecoderTypes.h" />
+    <ClInclude Include="include\zydis\Defines.h" />
+    <ClInclude Include="include\zydis\Encoder.h" />
+    <ClInclude Include="include\zydis\Formatter.h" />
+    <ClInclude Include="include\zydis\FormatterBuffer.h" />
+    <ClInclude Include="include\zydis\generated\EnumInstructionCategory.h" />
+    <ClInclude Include="include\zydis\generated\EnumISAExt.h" />
+    <ClInclude Include="include\zydis\generated\EnumISASet.h" />
+    <ClInclude Include="include\zydis\generated\EnumMnemonic.h" />
+    <ClInclude Include="include\zydis\generated\EnumRegister.h" />
+    <ClInclude Include="include\zydis\internal\DecoderData.h" />
+    <ClInclude Include="include\zydis\internal\EncoderData.h" />
+    <ClInclude Include="include\zydis\internal\FormatterATT.h" />
+    <ClInclude Include="include\zydis\internal\FormatterBase.h" />
+    <ClInclude Include="include\zydis\internal\FormatterIntel.h" />
+    <ClInclude Include="include\zydis\internal\SharedData.h" />
+    <ClInclude Include="include\zydis\internal\String.h" />
+    <ClInclude Include="include\zydis\MetaInfo.h" />
+    <ClInclude Include="include\zydis\Mnemonic.h" />
+    <ClInclude Include="include\zydis\Register.h" />
+    <ClInclude Include="include\zydis\SharedTypes.h" />
+    <ClInclude Include="include\zydis\ShortString.h" />
+    <ClInclude Include="include\zydis\Status.h" />
+    <ClInclude Include="include\zydis\Utils.h" />
+    <ClInclude Include="include\zydis\Zydis.h" />
+    <ClInclude Include="tools\ZydisFuzzShared.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\generated\AccessedFlags.inc" />
+    <None Include="src\generated\DecoderTables.inc" />
+    <None Include="src\generated\EncoderTables.inc" />
+    <None Include="src\generated\EnumInstructionCategory.inc" />
+    <None Include="src\generated\EnumISAExt.inc" />
+    <None Include="src\generated\EnumISASet.inc" />
+    <None Include="src\generated\EnumMnemonic.inc" />
+    <None Include="src\generated\EnumRegister.inc" />
+    <None Include="src\generated\FormatterStrings.inc" />
+    <None Include="src\generated\InstructionDefinitions.inc" />
+    <None Include="src\generated\InstructionEncodings.inc" />
+    <None Include="src\generated\OperandDefinitions.inc" />
+    <None Include="src\generated\RegisterClassLookup.inc" />
+    <None Include="src\generated\RegisterLookup.inc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resources\VersionInfo.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Decoder.c" />
+    <ClCompile Include="src\DecoderData.c" />
+    <ClCompile Include="src\Encoder.c" />
+    <ClCompile Include="src\EncoderData.c" />
+    <ClCompile Include="src\Formatter.c" />
+    <ClCompile Include="src\FormatterATT.c" />
+    <ClCompile Include="src\FormatterBase.c" />
+    <ClCompile Include="src\FormatterBuffer.c" />
+    <ClCompile Include="src\FormatterIntel.c" />
+    <ClCompile Include="src\MetaInfo.c" />
+    <ClCompile Include="src\Mnemonic.c" />
+    <ClCompile Include="src\Register.c" />
+    <ClCompile Include="src\SharedData.c" />
+    <ClCompile Include="src\String.c" />
+    <ClCompile Include="src\Utils.c" />
+    <ClCompile Include="src\Zydis.c" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
